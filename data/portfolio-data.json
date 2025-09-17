@@ -1,0 +1,374 @@
+{
+  "personal": {
+    "name": "Harshal Rane",
+    "title": "Full-Stack Developer",
+    "tagline": "Full-Stack Developer",
+    "bio": "I'm passionate about creating innovative solutions that bridge the gap between design and functionality. With expertise in modern web technologies, I help businesses and individuals bring their digital visions to life.",
+    "location": "Mumbai, Maharashtra",
+    "email": "harshalrane114@gmail.com",
+    "phone": "9158785403",
+    "website": "harshalrane.dev"
+  },
+  "navigation": [
+    { "name": "Home", "href": "/" },
+    { "name": "About", "href": "/about" },
+    { "name": "Projects", "href": "/projects" },
+    { "name": "Resume", "href": "/resume" },
+    { "name": "Contact", "href": "/contact" }
+  ],
+  "socialLinks": {
+    "github": "https://github.com/HarshalRaneHR",
+    "linkedin": "https://www.linkedin.com/in/harshal-rane-009916227/",
+    "twitter": "https://twitter.com",
+    "email": "mailto:harshalrane114@gmail.com"
+  },
+  "home": {
+    "hero": {
+      "shortName": "HR",
+      "title": "Harshal Rane",
+      "subtitle": "Full-Stack Developer",
+      "primaryCTA": "View My Work",
+      "secondaryCTA": "Get In Touch"
+    },
+    "introduction": {
+      "title": "Building the Future, One Line at a Time",
+      "description": "I'm passionate about creating innovative solutions that bridge the gap between design and functionality. With expertise in modern web technologies.",
+      "services": [
+        {
+          "title": "Frontend Development",
+          "description": "JavaScript, React, Next.js, TypeScript, and modern CSS frameworks",
+          "icon": "🎨"
+        },
+        {
+          "title": "Backend Development",
+          "description": "Node.js, Python, databases, and API development",
+          "icon": "⚙️"
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready to Start New Project?",
+      "description": "Let's collaborate and create something amazing together. I'm always excited to work on new challenges and innovative projects.",
+      "primaryCTA": "Start a Project",
+      "secondaryCTA": "Download Resume"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "subtitle": "Passionate Software Engineer with 2+ years of industry experience building digital solutions that deliver real-world impact. I enjoy turning complex challenges into clean, intuitive, and user-focused applications.",
+    "story": {
+      "title": "My Story",
+      "paragraphs": [
+        "I started my journey in web development during college, fascinated by the ability to create interactive experiences that could reach people worldwide. What began as a curiosity quickly became a passion.",
+        "Over the years, I've had the privilege of working with startups and established companies, helping them build everything from simple landing pages to complex enterprise applications.",
+        "When I'm not coding, you can find me exploring new technologies or enjoying the outdoors games."
+      ]
+    },
+    "skills": [
+      { "name": "React/Next.js", "level": 95 },
+      { "name": "JavaScript", "level": 95 },
+      { "name": "TypeScript", "level": 90 },
+      { "name": "Node.js", "level": 85 },
+      { "name": "Python", "level": 80 },
+      { "name": "Database Design", "level": 75 }
+    ],
+    "experience": [
+      {
+        "title": "Senior Full-Stack Developer",
+        "company": "Tech Innovations Inc.",
+        "period": "2022 - Present",
+        "description": "Lead development of scalable web applications using React, Node.js, and cloud technologies. Mentored junior developers and architected solutions for enterprise clients."
+      },
+      {
+        "title": "Frontend Developer",
+        "company": "Digital Solutions Co.",
+        "period": "2020 - 2022",
+        "description": "Developed responsive web applications and collaborated with design teams to create exceptional user experiences. Specialized in React and modern CSS frameworks."
+      },
+      {
+        "title": "Junior Developer",
+        "company": "StartUp Labs",
+        "period": "2019 - 2020",
+        "description": "Built and maintained web applications while learning modern development practices. Contributed to both frontend and backend development projects."
+      }
+    ],
+    "technologies": [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Node.js",
+      "Python",
+      "PostgreSQL",
+      "MongoDB",
+      "AWS",
+      "Docker",
+      "Git",
+      "Figma",
+      "Tailwind CSS"
+    ]
+  },
+  "projects": {
+    "title": "My Projects",
+    "subtitle": "A collection of projects I've worked on, ranging from full-stack applications to UI/UX designs. Each project represents a unique challenge and learning experience.",
+    "categories": [
+      "All",
+      "Full-Stack",
+      "Frontend",
+      "Backend",
+      "UI/UX",
+      "Data Visualization"
+    ],
+    "items": [
+      {
+        "id": 1,
+        "title": "E-Commerce Platform",
+        "description": "A full-stack e-commerce solution with payment integration, inventory management, and admin dashboard.",
+        "longDescription": "Built with Next.js, TypeScript, and Stripe for payments. Features include user authentication, product catalog, shopping cart, order management, and comprehensive admin panel. Deployed on Vercel with PostgreSQL database.",
+        "image": "/placeholder.svg?height=300&width=500",
+        "technologies": [
+          "Next.js",
+          "TypeScript",
+          "PostgreSQL",
+          "Stripe",
+          "Tailwind CSS"
+        ],
+        "category": "Full-Stack",
+        "featured": true,
+        "liveUrl": "https://example.com",
+        "githubUrl": "https://github.com/example"
+      },
+      {
+        "id": 2,
+        "title": "Task Management App",
+        "description": "A collaborative task management application with real-time updates and team collaboration features.",
+        "longDescription": "React-based application with real-time synchronization using WebSockets. Features drag-and-drop task organization, team collaboration, file attachments, and progress tracking. Built with modern React patterns and state management.",
+        "image": "/placeholder.svg?height=300&width=500",
+        "technologies": [
+          "React",
+          "Node.js",
+          "Socket.io",
+          "MongoDB",
+          "Material-UI"
+        ],
+        "category": "Frontend",
+        "featured": true,
+        "liveUrl": "https://example.com",
+        "githubUrl": "https://github.com/example"
+      },
+      {
+        "id": 3,
+        "title": "Weather Analytics Dashboard",
+        "description": "A data visualization dashboard for weather analytics with interactive charts and forecasting.",
+        "longDescription": "Python-based backend with Flask serving weather data APIs. Frontend built with React and D3.js for interactive data visualizations. Features include historical data analysis, weather forecasting, and customizable dashboard widgets.",
+        "image": "/placeholder.svg?height=300&width=500",
+        "technologies": ["Python", "Flask", "React", "D3.js", "PostgreSQL"],
+        "category": "Data Visualization",
+        "featured": false,
+        "liveUrl": "https://example.com",
+        "githubUrl": "https://github.com/example"
+      },
+      {
+        "id": 4,
+        "title": "Mobile Banking App UI",
+        "description": "Modern mobile banking application interface with focus on user experience and accessibility.",
+        "longDescription": "Complete UI/UX design for a mobile banking application. Includes user research, wireframing, prototyping, and final design implementation. Focus on accessibility, security, and intuitive user flows for financial transactions.",
+        "image": "/placeholder.svg?height=300&width=500",
+        "technologies": ["Figma", "React Native", "TypeScript", "Expo"],
+        "category": "UI/UX",
+        "featured": false,
+        "liveUrl": "https://example.com",
+        "githubUrl": "https://github.com/example"
+      },
+      {
+        "id": 5,
+        "title": "API Gateway Service",
+        "description": "Microservices API gateway with authentication, rate limiting, and monitoring capabilities.",
+        "longDescription": "Node.js-based API gateway service handling authentication, rate limiting, request routing, and monitoring for microservices architecture. Includes comprehensive logging, metrics collection, and health checks.",
+        "image": "/placeholder.svg?height=300&width=500",
+        "technologies": ["Node.js", "Express", "Redis", "Docker", "Kubernetes"],
+        "category": "Backend",
+        "featured": false,
+        "liveUrl": "https://example.com",
+        "githubUrl": "https://github.com/example"
+      },
+      {
+        "id": 6,
+        "title": "Portfolio Website",
+        "description": "Personal portfolio website with modern design, animations, and content management.",
+        "longDescription": "This very website! Built with Next.js, Tailwind CSS, and Framer Motion. Features include theme switching, responsive design, contact forms, and optimized performance. Deployed on Vercel with continuous integration.",
+        "image": "/placeholder.svg?height=300&width=500",
+        "technologies": [
+          "Next.js",
+          "Tailwind CSS",
+          "Framer Motion",
+          "TypeScript"
+        ],
+        "category": "Frontend",
+        "featured": true,
+        "liveUrl": "https://example.com",
+        "githubUrl": "https://github.com/example"
+      }
+    ]
+  },
+  "resume": {
+    "title": "Resume",
+    "subtitle": "Download my complete resume or view the details below",
+    "downloadText": "Download PDF Resume",
+    "contact": {
+      "name": "Harshal Rane",
+      "title": "Full-Stack Developer",
+      "email": "harshalrane114@gmail.com",
+      "phone": "9158785403",
+      "location": "Mumbai, Maharashtra",
+      "website": "harshalrane.dev"
+    },
+    "summary": "Experienced Full-Stack Developer with 5+ years of expertise in building scalable web applications and user-centered designs. Proficient in modern JavaScript frameworks, backend technologies, and cloud platforms. Passionate about creating efficient, maintainable code and exceptional user experiences. Strong background in both technical development and UI/UX design principles.",
+    "experience": [
+      {
+        "title": "Senior Full-Stack Developer",
+        "company": "Tech Innovations Inc.",
+        "location": "Mumbai, Maharashtra",
+        "period": "2022 - Present",
+        "achievements": [
+          "Led development of 3 major web applications serving 100K+ users",
+          "Architected microservices infrastructure reducing response times by 40%",
+          "Mentored 5 junior developers and established code review processes",
+          "Implemented CI/CD pipelines improving deployment frequency by 300%"
+        ]
+      },
+      {
+        "title": "Frontend Developer",
+        "company": "Digital Solutions Co.",
+        "location": "Mumbai, Maharashtra",
+        "period": "2020 - 2022",
+        "achievements": [
+          "Developed responsive web applications using React and modern CSS",
+          "Collaborated with design teams to implement pixel-perfect UI components",
+          "Optimized application performance achieving 95+ Lighthouse scores",
+          "Built reusable component library used across 10+ projects"
+        ]
+      },
+      {
+        "title": "Junior Developer",
+        "company": "StartUp Labs",
+        "location": "Mumbai, Maharashtra",
+        "period": "2019 - 2020",
+        "achievements": [
+          "Built and maintained web applications using JavaScript and Node.js",
+          "Participated in agile development processes and daily standups",
+          "Contributed to both frontend and backend development tasks",
+          "Learned modern development practices and version control systems"
+        ]
+      }
+    ],
+    "education": {
+      "degree": "Bachelor of Science in Computer Science",
+      "school": "University of California, Berkeley",
+      "period": "2015 - 2019",
+      "coursework": "Data Structures, Algorithms, Software Engineering, Database Systems, Web Development, Human-Computer Interaction"
+    },
+    "skills": {
+      "frontend": [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "JavaScript",
+        "HTML5",
+        "CSS3",
+        "Tailwind CSS",
+        "Sass"
+      ],
+      "backend": [
+        "Node.js",
+        "Python",
+        "Express.js",
+        "FastAPI",
+        "PostgreSQL",
+        "MongoDB",
+        "Redis"
+      ],
+      "tools": ["Git", "Docker", "AWS", "Vercel", "Figma", "Jest", "Cypress"]
+    },
+    "certifications": [
+      { "name": "AWS Certified Solutions Architect", "year": "2023" },
+      { "name": "Google UX Design Certificate", "year": "2022" },
+      { "name": "Meta Frontend Developer Certificate", "year": "2021" }
+    ]
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "subtitle": "I'm always interested in new opportunities and exciting projects. Whether you have a question or just want to say hi, I'll try my best to get back to you!",
+    "form": {
+      "title": "Send me a message",
+      "fields": {
+        "name": "Name",
+        "email": "Email",
+        "subject": "Subject",
+        "message": "Message"
+      },
+      "placeholders": {
+        "name": "Your name",
+        "email": "your.email@example.com",
+        "subject": "What's this about?",
+        "message": "Tell me about your project or just say hello!"
+      },
+      "submitText": "Send Message",
+      "submittingText": "Sending...",
+      "successMessage": "Thank you for your message. I'll get back to you soon.",
+      "errorMessage": "Something went wrong. Please try again."
+    },
+    "info": {
+      "title": "Contact Information",
+      "email": {
+        "label": "Email",
+        "value": "harshalrane114@gmail.com"
+      },
+      "phone": {
+        "label": "Phone",
+        "value": "9158785403"
+      },
+      "location": {
+        "label": "Location",
+        "value": "Mumbai, Maharashtra"
+      }
+    },
+    "social": {
+      "title": "Follow Me"
+    },
+    "availability": {
+      "title": "Let's work together",
+      "description": "I'm currently available for freelance work and interesting full-time opportunities. If you have a project in mind or just want to chat about technology, don't hesitate to reach out!",
+      "emailCTA": "Email Me",
+      "resumeCTA": "View Resume"
+    }
+  },
+  "footer": {
+    "brand": "Harshal Rane",
+    "description": "Full-Stack Developer",
+    "quickLinks": {
+      "title": "Quick Links",
+      "links": [
+        { "name": "About", "href": "/about" },
+        { "name": "Projects", "href": "/projects" },
+        { "name": "Resume", "href": "/resume" },
+        { "name": "Contact", "href": "/contact" }
+      ]
+    },
+    "services": {
+      "title": "Services",
+      "items": [
+        "Frontend Development",
+        "Full-Stack Development",
+        "Web Development"
+      ]
+    },
+    "contactInfo": {
+      "title": "Get In Touch",
+      "location": "Mumbai, Maharashtra",
+      "email": "harshalrane114@gmail.com",
+      "phone": "9158785403"
+    },
+    "copyright": "© 2024 Harshal Rane. All rights reserved.",
+    "madeWith": "Made with ❤️ using Next.js & Tailwind CSS"
+  }
+}
