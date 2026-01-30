@@ -1,11 +1,154 @@
 /* Global App Styles */
 .App {
   min-height: 100vh;
-  background-color: #0a0a0b;
+  background-color: var(--portfolio-bg);
+  color: var(--portfolio-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Ensure smooth animations */
 * {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== LIGHT THEME OVERRIDES ===== */
+
+/* Background overrides */
+.light section,
+.light .bg-\[\#0a0a0b\],
+.light .bg-\[\#08080a\],
+.light .bg-\[\#111113\] {
+  background-color: var(--portfolio-bg) !important;
+}
+
+/* Text color overrides */
+.light .text-white {
+  color: var(--portfolio-text) !important;
+}
+
+.light .text-white\/20,
+.light .text-white\/30,
+.light .text-white\/40 {
+  color: var(--portfolio-text-subtle) !important;
+}
+
+.light .text-white\/50,
+.light .text-white\/60,
+.light .text-white\/70,
+.light .text-white\/80 {
+  color: var(--portfolio-text-muted) !important;
+}
+
+/* Accent color adjustment for light mode */
+.light .text-\[\#64ffda\] {
+  color: var(--portfolio-accent) !important;
+}
+
+.light .bg-\[\#64ffda\] {
+  background-color: var(--portfolio-accent) !important;
+}
+
+.light .border-\[\#64ffda\]\/50,
+.light .border-\[\#64ffda\]\/20 {
+  border-color: var(--portfolio-accent) !important;
+  opacity: 0.5;
+}
+
+/* Border overrides */
+.light .border-white\/5,
+.light .border-white\/10,
+.light .border-white\/\[0\.05\] {
+  border-color: var(--portfolio-border) !important;
+}
+
+/* Card/Glass backgrounds */
+.light .bg-white\/\[0\.02\],
+.light .bg-white\/\[0\.03\],
+.light .bg-white\/5 {
+  background-color: var(--portfolio-card-bg) !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Gradient orbs - softer in light mode */
+.light .bg-\[\#64ffda\]\/5,
+.light .bg-\[\#64ffda\]\/10 {
+  background-color: var(--portfolio-gradient-1) !important;
+}
+
+.light .bg-\[\#3b82f6\]\/5,
+.light .bg-\[\#3b82f6\]\/10 {
+  background-color: var(--portfolio-gradient-2) !important;
+}
+
+/* Navbar scrolled state */
+.light nav.bg-\[\#0a0a0b\]\/90 {
+  background-color: rgba(250, 250, 249, 0.9) !important;
+}
+
+/* Mobile menu */
+.light .bg-\[\#0a0a0b\]\/98 {
+  background-color: rgba(250, 250, 249, 0.98) !important;
+}
+
+/* Grid pattern visibility */
+.light .bg-\[linear-gradient\(rgba\(255\,255\,255\,0\.02\)_1px\,transparent_1px\)\,linear-gradient\(90deg\,rgba\(255\,255\,255\,0\.02\)_1px\,transparent_1px\)\] {
+  background-image: linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(15, 23, 42, 0.03) 1px, transparent 1px) !important;
+}
+
+/* Hover states */
+.light .hover\:text-white:hover {
+  color: var(--portfolio-text) !important;
+}
+
+.light .hover\:text-\[\#64ffda\]:hover {
+  color: var(--portfolio-accent) !important;
+}
+
+.light .hover\:border-\[\#64ffda\]\/50:hover {
+  border-color: var(--portfolio-accent) !important;
+}
+
+.light .hover\:bg-\[\#64ffda\]\/10:hover {
+  background-color: rgba(234, 88, 12, 0.1) !important;
+}
+
+/* Form inputs */
+.light input,
+.light textarea {
+  background-color: white !important;
+  border-color: var(--portfolio-border) !important;
+  color: var(--portfolio-text) !important;
+}
+
+.light input::placeholder,
+.light textarea::placeholder {
+  color: var(--portfolio-text-subtle) !important;
+}
+
+/* Blur effects - reduce intensity in light mode */
+.light .blur-\[100px\],
+.light .blur-\[120px\],
+.light .blur-\[150px\] {
+  filter: blur(80px);
+  opacity: 0.6;
+}
+
+/* Open to Work badge - Light mode */
+.light .bg-emerald-500\/10 {
+  background-color: rgba(234, 88, 12, 0.1) !important;
+}
+
+.light .border-emerald-500\/20 {
+  border-color: rgba(234, 88, 12, 0.2) !important;
+}
+
+.light .bg-emerald-400,
+.light .bg-emerald-500 {
+  background-color: #ea580c !important;
+}
+
+.light .text-emerald-400 {
+  color: #ea580c !important;
 }

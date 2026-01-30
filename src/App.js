@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import { ThemeProvider } from "./context/ThemeContext";
 
 // Layout Components
 import Navbar from "./components/layout/Navbar";
@@ -16,19 +17,21 @@ import Contact from "./components/sections/Contact";
 
 function App() {
   return (
-    <div className="App bg-[#0a0a0b] min-h-screen">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <Education />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <ThemeProvider>
+      <div className="App min-h-screen transition-colors duration-300">
+        <Navbar />
+        <main>
+          <Hero />
+          <About />
+          <Skills />
+          <Experience />
+          <Projects />
+          <Education />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 }
 

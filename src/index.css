@@ -19,37 +19,73 @@ body {
   font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark theme (default) */
+.dark body,
+.dark {
   background-color: #0a0a0b;
   color: #ffffff;
-  overflow-x: hidden;
+}
+
+/* Light theme */
+.light body,
+.light {
+  background-color: #fafaf9;
+  color: #1c1917;
 }
 
 code, .font-mono {
   font-family: 'JetBrains Mono', source-code-pro, Menlo, Monaco, Consolas, monospace;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
+/* Custom scrollbar - Dark */
+.dark ::-webkit-scrollbar {
   width: 8px;
 }
 
-::-webkit-scrollbar-track {
+.dark ::-webkit-scrollbar-track {
   background: #0a0a0b;
 }
 
-::-webkit-scrollbar-thumb {
+.dark ::-webkit-scrollbar-thumb {
   background: #1a1a1d;
   border-radius: 4px;
 }
 
-::-webkit-scrollbar-thumb:hover {
+.dark ::-webkit-scrollbar-thumb:hover {
   background: #2a2a2d;
 }
 
+/* Custom scrollbar - Light */
+.light ::-webkit-scrollbar {
+  width: 8px;
+}
+
+.light ::-webkit-scrollbar-track {
+  background: #f5f5f4;
+}
+
+.light ::-webkit-scrollbar-thumb {
+  background: #d6d3d1;
+  border-radius: 4px;
+}
+
+.light ::-webkit-scrollbar-thumb:hover {
+  background: #a8a29e;
+}
+
 /* Selection color */
-::selection {
+.dark ::selection {
   background-color: rgba(100, 255, 218, 0.2);
   color: #64ffda;
+}
+
+.light ::selection {
+  background-color: rgba(234, 88, 12, 0.2);
+  color: #ea580c;
 }
 
 /* Smooth section transitions */
@@ -84,7 +120,21 @@ section {
         --chart-4: 43 74% 66%;
         --chart-5: 27 87% 67%;
         --radius: 0.5rem;
+
+        /* Portfolio-specific colors */
+        --portfolio-bg: #0a0a0b;
+        --portfolio-bg-secondary: #111113;
+        --portfolio-text: #ffffff;
+        --portfolio-text-muted: rgba(255, 255, 255, 0.6);
+        --portfolio-text-subtle: rgba(255, 255, 255, 0.4);
+        --portfolio-accent: #64ffda;
+        --portfolio-accent-secondary: #3b82f6;
+        --portfolio-border: rgba(255, 255, 255, 0.05);
+        --portfolio-card-bg: rgba(255, 255, 255, 0.02);
+        --portfolio-gradient-1: rgba(100, 255, 218, 0.05);
+        --portfolio-gradient-2: rgba(59, 130, 246, 0.05);
     }
+
     .dark {
         --background: 0 0% 3.9%;
         --foreground: 0 0% 98%;
@@ -110,6 +160,34 @@ section {
         --chart-3: 30 80% 55%;
         --chart-4: 280 65% 60%;
         --chart-5: 340 75% 55%;
+
+        /* Portfolio-specific colors - Dark */
+        --portfolio-bg: #0a0a0b;
+        --portfolio-bg-secondary: #111113;
+        --portfolio-text: #ffffff;
+        --portfolio-text-muted: rgba(255, 255, 255, 0.6);
+        --portfolio-text-subtle: rgba(255, 255, 255, 0.4);
+        --portfolio-accent: #64ffda;
+        --portfolio-accent-secondary: #3b82f6;
+        --portfolio-border: rgba(255, 255, 255, 0.05);
+        --portfolio-card-bg: rgba(255, 255, 255, 0.02);
+        --portfolio-gradient-1: rgba(100, 255, 218, 0.05);
+        --portfolio-gradient-2: rgba(59, 130, 246, 0.05);
+    }
+
+    .light {
+        /* Portfolio-specific colors - Light (Orange accent) */
+        --portfolio-bg: #fafaf9;
+        --portfolio-bg-secondary: #f5f5f4;
+        --portfolio-text: #1c1917;
+        --portfolio-text-muted: rgba(28, 25, 23, 0.7);
+        --portfolio-text-subtle: rgba(28, 25, 23, 0.5);
+        --portfolio-accent: #ea580c;
+        --portfolio-accent-secondary: #c2410c;
+        --portfolio-border: rgba(28, 25, 23, 0.1);
+        --portfolio-card-bg: rgba(255, 255, 255, 0.9);
+        --portfolio-gradient-1: rgba(234, 88, 12, 0.1);
+        --portfolio-gradient-2: rgba(194, 65, 12, 0.08);
     }
 }
 

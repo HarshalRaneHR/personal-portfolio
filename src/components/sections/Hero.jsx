@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { ArrowDown, Terminal } from 'lucide-react';
-import { personalInfo, stats } from '../../data/mock';
+import React, { useEffect, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ArrowDown, Terminal, Download } from "lucide-react";
+import { personalInfo, stats } from "../../data/mock";
 
 const Hero = () => {
   const { scrollY } = useScroll();
@@ -18,8 +18,8 @@ const Hero = () => {
         y: (e.clientY / window.innerHeight - 0.5) * 20,
       });
     };
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
   }, []);
 
   return (
@@ -35,7 +35,7 @@ const Hero = () => {
           className="absolute bottom-1/4 -right-32 w-80 h-80 bg-[#3b82f6]/5 rounded-full blur-[100px]"
           style={{ y: y2 }}
         />
-        
+
         {/* Grid pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100px_100px]" />
       </div>
@@ -44,10 +44,7 @@ const Hero = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-12 pt-32 lg:pt-40">
         <div className="grid lg:grid-cols-12 gap-12 items-start">
           {/* Left Content - Asymmetric */}
-          <motion.div 
-            className="lg:col-span-7 lg:pr-12"
-            style={{ y: y2 }}
-          >
+          <motion.div className="lg:col-span-7 lg:pr-12" style={{ y: y2 }}>
             {/* Intro Tag */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -56,7 +53,9 @@ const Hero = () => {
               className="inline-flex items-center gap-2 mb-6"
             >
               <Terminal size={14} className="text-[#64ffda]" />
-              <span className="text-sm text-[#64ffda] font-mono tracking-wider">Full-Stack Developer</span>
+              <span className="text-sm text-[#64ffda] font-mono tracking-wider">
+                Software Developer
+              </span>
             </motion.div>
 
             {/* Name */}
@@ -102,6 +101,19 @@ const Hero = () => {
               >
                 Get in Touch
               </motion.a>
+              <motion.a
+                href="/resume.pdf"
+                download="Harshal_Rane_Resume.pdf"
+                className="group flex items-center gap-2 px-6 py-3 border border-white/10 text-white/60 hover:border-white/30 hover:text-white rounded transition-all duration-300"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Download
+                  size={16}
+                  className="group-hover:translate-y-0.5 transition-transform duration-300"
+                />
+                Resume
+              </motion.a>
             </motion.div>
           </motion.div>
 
@@ -111,7 +123,7 @@ const Hero = () => {
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 1, delay: 0.8 }}
-            style={{ 
+            style={{
               y: y1,
               x: mousePosition.x,
               rotateX: mousePosition.y * 0.1,
@@ -121,9 +133,11 @@ const Hero = () => {
             <div className="relative">
               {/* Decorative Line */}
               <div className="absolute -left-8 top-0 w-px h-full bg-gradient-to-b from-[#64ffda]/50 via-[#64ffda]/20 to-transparent" />
-              
+
               <div className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.05] rounded-2xl p-8">
-                <p className="text-xs text-white/30 uppercase tracking-widest mb-6 font-mono">Impact Metrics</p>
+                <p className="text-xs text-white/30 uppercase tracking-widest mb-6 font-mono">
+                  Impact Metrics
+                </p>
                 <div className="grid grid-cols-2 gap-6">
                   {stats.map((stat, index) => (
                     <motion.div
@@ -156,7 +170,9 @@ const Hero = () => {
           transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           className="flex flex-col items-center gap-2"
         >
-          <span className="text-xs text-white/30 uppercase tracking-widest">Scroll</span>
+          <span className="text-xs text-white/30 uppercase tracking-widest">
+            Scroll
+          </span>
           <ArrowDown size={16} className="text-white/30" />
         </motion.div>
       </motion.div>

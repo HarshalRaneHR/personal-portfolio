@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
+import { Menu, X, Github, Linkedin, Sun, Moon } from 'lucide-react';
 import { personalInfo } from '../../data/mock';
+import { useTheme } from '../../context/ThemeContext';
 
 const navLinks = [
   { name: 'About', href: '#about' },
@@ -14,6 +15,7 @@ const navLinks = [
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { theme, toggleTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,15 +39,31 @@ const Navbar = () => {
       >
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex items-center justify-between h-20">
-            {/* Logo */}
-            <motion.a
-              href="#"
-              className="text-xl font-semibold tracking-tight text-white"
-              whileHover={{ scale: 1.02 }}
-            >
-              <span className="text-[#64ffda]">H</span>arshal
-              <span className="text-white/40">.</span>
-            </motion.a>
+            {/* Logo + Open to Work Badge */}
+            <div className="flex items-center gap-4">
+              <motion.a
+                href="#"
+                className="text-xl font-semibold tracking-tight text-white"
+                whileHover={{ scale: 1.02 }}
+              >
+                <span className="text-[#64ffda]">H</span>arshal
+                <span className="text-white/40">.</span>
+              </motion.a>
+
+              {/* Open to Work Badge */}
+              <motion.div
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
+                className="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/20 rounded-full"
+              >
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span className="text-xs font-medium text-emerald-400">Open to Work</span>
+              </motion.div>
+            </div>
 
             {/* Desktop Nav */}
             <div className="hidden md:flex items-center gap-8">
@@ -79,11 +97,29 @@ const Navbar = () => {
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 text-white/40 hover:text-[#64ffda] transition-colors duration-300"
+                className="p-2 text-white/40 dark:text-white/40 hover:text-[#64ffda] transition-colors duration-300"
                 whileHover={{ scale: 1.1, y: -2 }}
               >
                 <Linkedin size={18} />
               </motion.a>
+
+              {/* Theme Toggle */}
+              <motion.button
+                onClick={toggleTheme}
+                className="p-2 text-white/40 dark:text-white/40 hover:text-[#64ffda] transition-colors duration-300 relative"
+                whileHover={{ scale: 1.1, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+                aria-label="Toggle theme"
+              >
+                <motion.div
+                  initial={false}
+                  animate={{ rotate: theme === 'dark' ? 0 : 180 }}
+                  transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                >
+                  {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+                </motion.div>
+              </motion.button>
+
               <motion.a
                 href={`mailto:${personalInfo.email}`}
                 className="ml-2 px-4 py-2 text-sm border border-[#64ffda]/50 text-[#64ffda] rounded hover:bg-[#64ffda]/10 transition-all duration-300"
@@ -128,13 +164,20 @@ const Navbar = () => {
                   {link.name}
                 </motion.a>
               ))}
-              <div className="flex gap-6 mt-8">
+              <div className="flex items-center gap-6 mt-8">
                 <a href={personalInfo.github} target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-[#64ffda]">
                   <Github size={24} />
                 </a>
                 <a href={personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-[#64ffda]">
                   <Linkedin size={24} />
                 </a>
+                <button
+                  onClick={toggleTheme}
+                  className="p-2 text-white/40 hover:text-[#64ffda] transition-colors"
+                  aria-label="Toggle theme"
+                >
+                  {theme === 'dark' ? <Sun size={24} /> : <Moon size={24} />}
+                </button>
               </div>
             </div>
           </motion.div>
