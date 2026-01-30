@@ -52,6 +52,18 @@ module.exports = {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
+  			},
+  			// Portfolio theme colors
+  			'portfolio': {
+  				'bg': 'var(--portfolio-bg)',
+  				'bg-secondary': 'var(--portfolio-bg-secondary)',
+  				'text': 'var(--portfolio-text)',
+  				'text-muted': 'var(--portfolio-text-muted)',
+  				'text-subtle': 'var(--portfolio-text-subtle)',
+  				'accent': 'var(--portfolio-accent)',
+  				'accent-secondary': 'var(--portfolio-accent-secondary)',
+  				'border': 'var(--portfolio-border)',
+  				'card-bg': 'var(--portfolio-card-bg)',
   			}
   		},
   		keyframes: {

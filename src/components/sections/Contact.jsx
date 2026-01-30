@@ -23,14 +23,14 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission (mock)
     await new Promise(resolve => setTimeout(resolve, 1500));
-    
+
     setIsSubmitting(false);
     setIsSubmitted(true);
     setFormData({ name: '', email: '', message: '' });
-    
+
     // Reset success message after 5 seconds
     setTimeout(() => setIsSubmitted(false), 5000);
   };
@@ -47,14 +47,14 @@ const Contact = () => {
   ];
 
   return (
-    <section 
+    <section
       ref={sectionRef}
-      id="contact" 
-      className="relative py-32 lg:py-48 bg-[#08080a] overflow-hidden"
+      id="contact"
+      className="relative py-32 lg:py-48 bg-portfolio-bg-secondary overflow-hidden"
     >
       {/* Background Elements */}
-      <motion.div 
-        className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[#64ffda]/[0.02] rounded-full blur-[150px]"
+      <motion.div
+        className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[var(--portfolio-accent)]/[0.02] rounded-full blur-[150px]"
         style={{ y }}
       />
 
@@ -68,14 +68,14 @@ const Contact = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <span className="text-xs text-[#64ffda] font-mono tracking-widest uppercase">
+            <span className="text-xs text-portfolio-accent font-mono tracking-widest uppercase">
               06 / Contact
             </span>
-            <h2 className="text-4xl lg:text-6xl font-bold text-white mt-4 leading-tight">
+            <h2 className="text-4xl lg:text-6xl font-bold text-portfolio-text mt-4 leading-tight">
               Let's build
-              <span className="block text-white/30">something together</span>
+              <span className="block text-portfolio-text-subtle">something together</span>
             </h2>
-            <p className="text-lg text-white/50 mt-6 max-w-lg">
+            <p className="text-lg text-portfolio-text-muted mt-6 max-w-lg">
               I'm currently open to new opportunities and collaborations. Whether you have a project in mind or just want to connect, feel free to reach out.
             </p>
           </motion.div>
@@ -101,14 +101,14 @@ const Contact = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   viewport={{ once: true }}
                   whileHover={{ x: 8 }}
-                  className="group flex items-center gap-4 p-4 bg-white/[0.02] border border-white/[0.05] rounded-xl hover:border-[#64ffda]/20 transition-all duration-300"
+                  className="group flex items-center gap-4 p-4 bg-portfolio-card-bg border border-portfolio-border rounded-xl hover:border-portfolio-accent/20 transition-all duration-300"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-[#64ffda]/10 flex items-center justify-center group-hover:bg-[#64ffda]/20 transition-colors duration-300">
-                    <link.icon size={18} className="text-[#64ffda]" />
+                  <div className="w-10 h-10 rounded-lg bg-portfolio-accent/10 flex items-center justify-center group-hover:bg-portfolio-accent/20 transition-colors duration-300">
+                    <link.icon size={18} className="text-portfolio-accent" />
                   </div>
                   <div>
-                    <p className="text-xs text-white/30 uppercase tracking-wider">{link.label}</p>
-                    <p className="text-white/70 group-hover:text-white transition-colors duration-300">{link.value}</p>
+                    <p className="text-xs text-portfolio-text-subtle uppercase tracking-wider">{link.label}</p>
+                    <p className="text-portfolio-text-muted group-hover:text-portfolio-text transition-colors duration-300">{link.value}</p>
                   </div>
                 </motion.a>
               ))}
@@ -123,11 +123,11 @@ const Contact = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.05, y: -4 }}
-                  className="group flex items-center gap-3 px-5 py-3 bg-white/[0.03] border border-white/[0.08] rounded-xl hover:border-[#64ffda]/30 transition-all duration-300"
+                  className="group flex items-center gap-3 px-5 py-3 bg-portfolio-card-bg border border-portfolio-border rounded-xl hover:border-portfolio-accent/30 transition-all duration-300"
                 >
-                  <link.icon size={18} className="text-white/50 group-hover:text-[#64ffda] transition-colors duration-300" />
-                  <span className="text-sm text-white/50 group-hover:text-white transition-colors duration-300">{link.label}</span>
-                  <ArrowUpRight size={14} className="text-white/30 group-hover:text-[#64ffda] transition-colors duration-300" />
+                  <link.icon size={18} className="text-portfolio-text-muted group-hover:text-portfolio-accent transition-colors duration-300" />
+                  <span className="text-sm text-portfolio-text-muted group-hover:text-portfolio-text transition-colors duration-300">{link.label}</span>
+                  <ArrowUpRight size={14} className="text-portfolio-text-subtle group-hover:text-portfolio-accent transition-colors duration-300" />
                 </motion.a>
               ))}
             </div>
@@ -144,37 +144,37 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-xs text-white/30 uppercase tracking-wider mb-2">Name</label>
+                  <label className="block text-xs text-portfolio-text-subtle uppercase tracking-wider mb-2">Name</label>
                   <input
                     type="text"
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     required
-                    className="w-full px-4 py-3 bg-white/[0.03] border border-white/[0.08] rounded-xl text-white placeholder-white/20 focus:outline-none focus:border-[#64ffda]/50 transition-colors duration-300"
+                    className="w-full px-4 py-3 bg-portfolio-card-bg border border-portfolio-border rounded-xl text-portfolio-text placeholder-portfolio-text-subtle focus:outline-none focus:border-portfolio-accent/50 transition-colors duration-300"
                     placeholder="John Doe"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs text-white/30 uppercase tracking-wider mb-2">Email</label>
+                  <label className="block text-xs text-portfolio-text-subtle uppercase tracking-wider mb-2">Email</label>
                   <input
                     type="email"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
-                    className="w-full px-4 py-3 bg-white/[0.03] border border-white/[0.08] rounded-xl text-white placeholder-white/20 focus:outline-none focus:border-[#64ffda]/50 transition-colors duration-300"
+                    className="w-full px-4 py-3 bg-portfolio-card-bg border border-portfolio-border rounded-xl text-portfolio-text placeholder-portfolio-text-subtle focus:outline-none focus:border-portfolio-accent/50 transition-colors duration-300"
                     placeholder="john@example.com"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs text-white/30 uppercase tracking-wider mb-2">Message</label>
+                <label className="block text-xs text-portfolio-text-subtle uppercase tracking-wider mb-2">Message</label>
                 <textarea
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 bg-white/[0.03] border border-white/[0.08] rounded-xl text-white placeholder-white/20 focus:outline-none focus:border-[#64ffda]/50 transition-colors duration-300 resize-none"
+                  className="w-full px-4 py-3 bg-portfolio-card-bg border border-portfolio-border rounded-xl text-portfolio-text placeholder-portfolio-text-subtle focus:outline-none focus:border-portfolio-accent/50 transition-colors duration-300 resize-none"
                   placeholder="Tell me about your project..."
                 />
               </div>
@@ -184,7 +184,7 @@ const Contact = () => {
                 disabled={isSubmitting}
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
-                className="group flex items-center gap-3 px-8 py-4 bg-[#64ffda] text-[#0a0a0b] font-medium rounded-xl hover:bg-[#64ffda]/90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="group flex items-center gap-3 px-8 py-4 bg-portfolio-accent text-portfolio-bg font-medium rounded-xl hover:opacity-90 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <span>Sending...</span>

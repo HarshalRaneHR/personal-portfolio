@@ -11,7 +11,7 @@ const SkillCategory = ({ title, items, index }) => {
       viewport={{ once: true }}
       className="group"
     >
-      <h3 className="text-xs text-[#64ffda] font-mono uppercase tracking-widest mb-4">
+      <h3 className="text-xs text-portfolio-accent font-mono uppercase tracking-widest mb-4">
         {title}
       </h3>
       <div className="flex flex-wrap gap-2">
@@ -23,7 +23,7 @@ const SkillCategory = ({ title, items, index }) => {
             transition={{ duration: 0.4, delay: index * 0.1 + i * 0.05 }}
             viewport={{ once: true }}
             whileHover={{ scale: 1.05, y: -2 }}
-            className="px-3 py-1.5 text-sm text-white/70 bg-white/[0.03] border border-white/[0.08] rounded-lg hover:border-[#64ffda]/30 hover:text-white transition-all duration-300 cursor-default"
+            className="px-3 py-1.5 text-sm text-portfolio-text-muted bg-portfolio-card-bg border border-portfolio-border rounded-lg hover:border-portfolio-accent/30 hover:text-portfolio-text transition-all duration-300 cursor-default"
           >
             {skill}
           </motion.span>
@@ -51,14 +51,14 @@ const Skills = () => {
   ];
 
   return (
-    <section 
+    <section
       ref={sectionRef}
-      id="skills" 
-      className="relative py-32 lg:py-48 bg-[#08080a] overflow-hidden"
+      id="skills"
+      className="relative py-32 lg:py-48 bg-portfolio-bg-secondary overflow-hidden"
     >
       {/* Background Elements */}
-      <motion.div 
-        className="absolute top-1/2 left-0 w-96 h-96 bg-[#64ffda]/[0.02] rounded-full blur-[150px] -translate-y-1/2"
+      <motion.div
+        className="absolute top-1/2 left-0 w-96 h-96 bg-[var(--portfolio-accent)]/[0.02] rounded-full blur-[150px] -translate-y-1/2"
         style={{ x }}
       />
 
@@ -72,12 +72,12 @@ const Skills = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <span className="text-xs text-[#64ffda] font-mono tracking-widest uppercase">
+            <span className="text-xs text-portfolio-accent font-mono tracking-widest uppercase">
               02 / Skills
             </span>
-            <h2 className="text-4xl lg:text-5xl font-bold text-white mt-4 leading-tight">
+            <h2 className="text-4xl lg:text-5xl font-bold text-portfolio-text mt-4 leading-tight">
               Technical
-              <span className="block text-white/30">arsenal</span>
+              <span className="block text-portfolio-text-subtle">arsenal</span>
             </h2>
           </motion.div>
 
@@ -88,7 +88,7 @@ const Skills = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            <p className="text-lg text-white/50 max-w-lg">
+            <p className="text-lg text-portfolio-text-muted max-w-lg">
               A comprehensive toolkit refined through real-world projects and continuous learning.
             </p>
           </motion.div>
