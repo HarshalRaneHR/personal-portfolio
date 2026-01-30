@@ -118,7 +118,7 @@ const Hero = () => {
           </motion.div>
 
           {/* Right Content - Stats Card (Offset) */}
-          <motion.div
+          {/* <motion.div
             className="lg:col-span-5 lg:mt-24"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -131,7 +131,6 @@ const Hero = () => {
             }}
           >
             <div className="relative">
-              {/* Decorative Line */}
               <div className="absolute -left-8 top-0 w-px h-full bg-gradient-to-b from-portfolio-accent/50 via-portfolio-accent/20 to-transparent" />
 
               <div className="bg-portfolio-card-bg backdrop-blur-sm border border-portfolio-border rounded-2xl p-8">
@@ -156,7 +155,7 @@ const Hero = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
 
