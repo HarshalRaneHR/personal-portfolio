@@ -1,21 +1,29 @@
-import React, { useRef, useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { Send, Mail, Phone, MapPin, Github, Linkedin, ArrowUpRight } from 'lucide-react';
-import { personalInfo } from '../../data/mock';
+import React, { useRef, useState } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import {
+  Send,
+  Mail,
+  Phone,
+  MapPin,
+  Github,
+  Linkedin,
+  ArrowUpRight,
+} from "lucide-react";
+import { personalInfo } from "../../data/mock";
 
 const Contact = () => {
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: sectionRef,
-    offset: ["start end", "end start"]
+    offset: ["start end", "end start"],
   });
 
   const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
 
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
+    name: "",
+    email: "",
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -25,25 +33,40 @@ const Contact = () => {
     setIsSubmitting(true);
 
     // Simulate form submission (mock)
-    await new Promise(resolve => setTimeout(resolve, 1500));
+    await new Promise((resolve) => setTimeout(resolve, 1500));
 
     setIsSubmitting(false);
     setIsSubmitted(true);
-    setFormData({ name: '', email: '', message: '' });
+    setFormData({ name: "", email: "", message: "" });
 
     // Reset success message after 5 seconds
     setTimeout(() => setIsSubmitted(false), 5000);
   };
 
   const contactLinks = [
-    { icon: Mail, label: 'Email', value: personalInfo.email, href: `mailto:${personalInfo.email}` },
-    { icon: Phone, label: 'Phone', value: personalInfo.phone, href: `tel:${personalInfo.phone}` },
-    { icon: MapPin, label: 'Location', value: personalInfo.location, href: '#' },
+    {
+      icon: Mail,
+      label: "Email",
+      value: personalInfo.email,
+      href: `mailto:${personalInfo.email}`,
+    },
+    {
+      icon: Phone,
+      label: "Phone",
+      value: personalInfo.phone,
+      href: `tel:${personalInfo.phone}`,
+    },
+    {
+      icon: MapPin,
+      label: "Location",
+      value: personalInfo.location,
+      href: "#",
+    },
   ];
 
   const socialLinks = [
-    { icon: Github, label: 'GitHub', href: personalInfo.github },
-    { icon: Linkedin, label: 'LinkedIn', href: personalInfo.linkedin },
+    { icon: Github, label: "GitHub", href: personalInfo.github },
+    { icon: Linkedin, label: "LinkedIn", href: personalInfo.linkedin },
   ];
 
   return (
@@ -54,7 +77,7 @@ const Contact = () => {
     >
       {/* Background Elements */}
       <motion.div
-        className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[var(--portfolio-accent)]/[0.02] rounded-full blur-[150px]"
+        className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-[var(--portfolio-accent)]/[0.02] rounded-full blur-[150px] pointer-events-none"
         style={{ y }}
       />
 
@@ -73,10 +96,14 @@ const Contact = () => {
             </span>
             <h2 className="text-4xl lg:text-6xl font-bold text-portfolio-text mt-4 leading-tight">
               Let's build
-              <span className="block text-portfolio-text-subtle">something together</span>
+              <span className="block text-portfolio-text-subtle">
+                something together
+              </span>
             </h2>
             <p className="text-lg text-portfolio-text-muted mt-6 max-w-lg">
-              I'm currently open to new opportunities and collaborations. Whether you have a project in mind or just want to connect, feel free to reach out.
+              I'm currently open to new opportunities and collaborations.
+              Whether you have a project in mind or just want to connect, feel
+              free to reach out.
             </p>
           </motion.div>
         </div>
@@ -107,8 +134,12 @@ const Contact = () => {
                     <link.icon size={18} className="text-portfolio-accent" />
                   </div>
                   <div>
-                    <p className="text-xs text-portfolio-text-subtle uppercase tracking-wider">{link.label}</p>
-                    <p className="text-portfolio-text-muted group-hover:text-portfolio-text transition-colors duration-300">{link.value}</p>
+                    <p className="text-xs text-portfolio-text-subtle uppercase tracking-wider">
+                      {link.label}
+                    </p>
+                    <p className="text-portfolio-text-muted group-hover:text-portfolio-text transition-colors duration-300">
+                      {link.value}
+                    </p>
                   </div>
                 </motion.a>
               ))}
@@ -125,9 +156,17 @@ const Contact = () => {
                   whileHover={{ scale: 1.05, y: -4 }}
                   className="group flex items-center gap-3 px-5 py-3 bg-portfolio-card-bg border border-portfolio-border rounded-xl hover:border-portfolio-accent/30 transition-all duration-300"
                 >
-                  <link.icon size={18} className="text-portfolio-text-muted group-hover:text-portfolio-accent transition-colors duration-300" />
-                  <span className="text-sm text-portfolio-text-muted group-hover:text-portfolio-text transition-colors duration-300">{link.label}</span>
-                  <ArrowUpRight size={14} className="text-portfolio-text-subtle group-hover:text-portfolio-accent transition-colors duration-300" />
+                  <link.icon
+                    size={18}
+                    className="text-portfolio-text-muted group-hover:text-portfolio-accent transition-colors duration-300"
+                  />
+                  <span className="text-sm text-portfolio-text-muted group-hover:text-portfolio-text transition-colors duration-300">
+                    {link.label}
+                  </span>
+                  <ArrowUpRight
+                    size={14}
+                    className="text-portfolio-text-subtle group-hover:text-portfolio-accent transition-colors duration-300"
+                  />
                 </motion.a>
               ))}
             </div>
@@ -144,22 +183,30 @@ const Contact = () => {
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-xs text-portfolio-text-subtle uppercase tracking-wider mb-2">Name</label>
+                  <label className="block text-xs text-portfolio-text-subtle uppercase tracking-wider mb-2">
+                    Name
+                  </label>
                   <input
                     type="text"
                     value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
                     required
                     className="w-full px-4 py-3 bg-portfolio-card-bg border border-portfolio-border rounded-xl text-portfolio-text placeholder-portfolio-text-subtle focus:outline-none focus:border-portfolio-accent/50 transition-colors duration-300"
                     placeholder="John Doe"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs text-portfolio-text-subtle uppercase tracking-wider mb-2">Email</label>
+                  <label className="block text-xs text-portfolio-text-subtle uppercase tracking-wider mb-2">
+                    Email
+                  </label>
                   <input
                     type="email"
                     value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
                     required
                     className="w-full px-4 py-3 bg-portfolio-card-bg border border-portfolio-border rounded-xl text-portfolio-text placeholder-portfolio-text-subtle focus:outline-none focus:border-portfolio-accent/50 transition-colors duration-300"
                     placeholder="john@example.com"
@@ -168,10 +215,14 @@ const Contact = () => {
               </div>
 
               <div>
-                <label className="block text-xs text-portfolio-text-subtle uppercase tracking-wider mb-2">Message</label>
+                <label className="block text-xs text-portfolio-text-subtle uppercase tracking-wider mb-2">
+                  Message
+                </label>
                 <textarea
                   value={formData.message}
-                  onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, message: e.target.value })
+                  }
                   required
                   rows={6}
                   className="w-full px-4 py-3 bg-portfolio-card-bg border border-portfolio-border rounded-xl text-portfolio-text placeholder-portfolio-text-subtle focus:outline-none focus:border-portfolio-accent/50 transition-colors duration-300 resize-none"
@@ -193,7 +244,10 @@ const Contact = () => {
                 ) : (
                   <>
                     <span>Send Message</span>
-                    <Send size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
+                    <Send
+                      size={16}
+                      className="group-hover:translate-x-1 transition-transform duration-300"
+                    />
                   </>
                 )}
               </motion.button>
